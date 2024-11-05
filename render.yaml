@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: pancake-dify-integration
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PANCAKE_API_KEY
+        sync: false
+      - key: PANCAKE_SHOP_ID
+        sync: false
+      - key: PANCAKE_WEBHOOK_SECRET
+        sync: false
+      - key: DIFY_API_KEY
+        sync: false
+      - key: DIFY_BASE_URL
+        value: https://api.dify.ai/v1
+      - key: DIFY_APP_ID
+        sync: false
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn src.main:app --host 0.0.0.0 --port $PORT

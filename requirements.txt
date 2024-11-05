@@ -1,0 +1,7 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+requests==2.31.0
+python-dotenv==1.0.0
+pydantic==2.4.2
+python-jose==3.3.0  # Để xử lý JWT
+aiohttp==3.8.5  # Để xử lý async HTTP requests
